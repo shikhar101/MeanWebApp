@@ -1,0 +1,28 @@
+<div class="page-header">User Login</div>
+
+<form ng-submit="main.loginUser(loginData);">
+    <label>Username:</label>
+    <input class="form-control" type="text" name="username" placeholder="please enter your username" ng-model="main.loginData.username">
+    <br>
+
+    <label>Password:</label>
+    <input class="form-control" type="password" name="password" placeholder="please enter a strong password" ng-model="main.loginData.password">
+    <br>
+
+    <button class="btn btn-primary" type="submit">Login</button>&nbsp;
+    <a href="/auth/facebook" target="_blank">
+        <button type="button" class="btn btn-success">facebook</button>
+    </a>
+</form>
+
+<br>
+
+<div class="row show-hide-message" ng-show="main.successMsg">
+    <div class="alert alert-success">{{ main.successMsg }}</div>
+</div>
+
+<br>
+
+<div class="row show-hide-message" ng-show="main.errorMsg">
+    <div class="alert alert-warning">{{ main.errorMsg }}</div>
+</div>

@@ -1,0 +1,41 @@
+{
+  "name": "mean-stack-app",
+  "version": "1.0.0",
+  "description": "MEAN Stack App with Angular 2",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mittalchirag/MEAN-Stack.git"
+  },
+  "keywords": [
+    "MEAN",
+    "Stack",
+    "Angular",
+    "2",
+    "Application"
+  ],
+  "author": "Chirag Mittal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mittalchirag/MEAN-Stack/issues"
+  },
+  "homepage": "https://github.com/mittalchirag/MEAN-Stack#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.2",
+    "mongoose-title-case": "0.0.4",
+    "mongoose-validator": "^2.0.2",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1"
+  }
+}

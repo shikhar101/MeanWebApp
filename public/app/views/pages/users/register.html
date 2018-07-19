@@ -1,0 +1,64 @@
+<div class="page-header">
+    <h3>User Resgistration</h3>
+</div>
+
+<form name="regForm" ng-submit="register.regUser(regData);" novalidate>
+    <div ng-class="{'has-success': (regForm.name.$valid && !regForm.name.$pristine), 
+ 'has-error': (!regForm.name.$valid && !regForm.name.$pristine) || (!regForm.name.$valid && regForm.$submitted)}">
+        <label>Name:</label>
+        <input class="form-control" type="text" name="name" placeholder="please enter your name" ng-model="register.regData.name">
+        <p class="help-block" ng-show="(!regForm.name.$pristine && regForm.name.$error.required) ||
+        (regForm.$submitted && regForm.name.$error.required)">This field is required</p>
+    </div>
+    <br>
+
+    <label>Email:</label>
+    <input class="form-control" type="text" name="email" placeholder="please enter your e-mail" ng-blur="register.checkEmail(regData);" ng-model="register.regData.email">
+    <p class="help-block" ng-show="register.emailMsg">{{ register.emailMsg }} </p>    
+    <br>
+
+    <label>Username:</label>
+    <input class="form-control" type="text" name="username" placeholder="please enter your username" ng-blur="register.checkUsername(regData);" ng-model="register.regData.username">
+    <p class="help-block" ng-show="register.usernameMsg">{{ register.usernameMsg }} </p>
+    <br>
+
+    <label>Password:</label>
+    <input class="form-control" type="password" name="password" placeholder="please enter a strong password" ng-model="register.regData.password">
+    <br>
+
+    <button class="btn btn-primary" type="submit">Register</button>
+</form>
+
+<input type="text" name="firstPassword" ng-model="firstPassword">
+<br>
+<br>
+<input type="text" name="confirmPassword" ng-mddel="confirm" match="{{ firstPassword }}">
+<br>
+
+
+<span>
+    <strong> Is this form pristine(new): </strong>{{ regForm.$pristine }}
+</span>
+<br>
+<span>
+    <strong> Is this form having errors: </strong>{{ regForm.$error  }}{{ regForm.$submitted }}
+</span>
+<br>
+<span>
+    <strong> Is this form submitted: </strong> {{ regForm.$submitted }}
+</span>
+<br>
+<span>
+    <strong> Is this form valid: </strong>{{ regForm.$valid }}
+</span>
+<br>
+
+<div class="row show-hide-message" ng-show="register.successMsg">
+    <div class="alert alert-success">{{ register.successMsg }}</div>
+</div>
+
+<br>
+
+<div class="row show-hide-message" ng-show="register.errorMsg">
+    <div class="alert alert-warning">{{ register.errorMsg }}</div>
+</div>

@@ -3,11 +3,10 @@ var Schema=mongoose.Schema;
 var jwt = require('jsonwebtoken');
 
 var ResultSchema = new Schema({
-    id : {
+    Score : {
         type: Number,
-        unique: true
+        required: true
     },
-    Score : Number,
     D_id: String,
 });
 

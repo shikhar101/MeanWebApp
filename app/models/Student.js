@@ -6,10 +6,14 @@ var StudentSchema = new Schema({
         type:  Number,
         unique: true
     },
-    Reg_no = String,
-    Name = String,
-    CurrentSem = Number,
-    username = String
+    Reg_no: {
+    type: String,
+    reqyured: true,
+    unique: true
+    },
+    Name: String,
+    CurrentSem: Number,
+    username: String
 });
 
 

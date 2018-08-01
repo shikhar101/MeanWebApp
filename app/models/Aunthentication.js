@@ -9,10 +9,6 @@ var AuthenticationSchema = new  Schema({
         required: true,
         unique: true
     },
-    id: {
-        type : Number,
-        Required: true
-    },
     username: {
         type: String,
         Required: true,
@@ -38,12 +34,11 @@ AuthenticationSchama.method.generateJwt = function(){
     expiry.setDate(expiry.getDate() + 9);
 
     return this.generateJwt.sign({
-        id: this.id,
-        email: this.email,
-        name: this.name,
-        username: this.username,
-        exp: parseInt(expiry.getTime()/1000)
-    });
+        _id: this._id,
+        username: this.username
+    },secret,{
+        expiresIn: parseInt(expiry.getTime() / 1000)
+     });
 };
 
     mongoose.model('Authentication',AuthenticationSchema);

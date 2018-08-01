@@ -2,12 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var TeachingStaffSchema = new Schema({
-    id: {
-        type: Number,
-        required: true
-    },
     Name: {
-        type: string,
+        type: String,
         required: true
     },
 
